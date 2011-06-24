@@ -1,0 +1,8 @@
+#
+# system.prop for galaxyace
+#
+
+debug.sf.hw=1
+dalvik.vm.heapsize=64m
+ro.sf.lcd_density=160
+
