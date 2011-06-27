@@ -32,7 +32,6 @@ on early-fs
 
 on fs
     mount tmpfs tmpfs /tmp
-    mount rfs /dev/stl12 /system check=no
 
 on post-fs
 
