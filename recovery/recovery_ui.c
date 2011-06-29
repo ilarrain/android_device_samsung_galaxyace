@@ -92,6 +92,14 @@ int device_handle_key(int key_code, int visible) {
 }
 
 int device_perform_action(int which) {
+    switch (chosen_item) {
+        case ITEM_REBOOT:
+            __reboot(LINUX_REBOOT_MAGIC1, LINUX_REBOOT_MAGIC2, LINUX_REBOOT_CMD_RESTART2, "recovery_done");
+            return;
+        case ITEM_POWEROFF:
+            __reboot(LINUX_REBOOT_MAGIC1, LINUX_REBOOT_MAGIC2, LINUX_REBOOT_CMD_POWER_OFF, "recovery_done");
+            return;
+    }
     return which;
 }
 
