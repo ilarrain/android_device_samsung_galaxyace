@@ -20,6 +20,8 @@
 #include "common.h"
 #include "extendedcommands.h"
 
+#include <sys/reboot.h>
+
 char* MENU_HEADERS[] = { NULL };
 
 char* MENU_ITEMS[] = { "reboot system now",
@@ -92,13 +94,13 @@ int device_handle_key(int key_code, int visible) {
 }
 
 int device_perform_action(int which) {
-    switch (chosen_item) {
+    switch (which) {
         case ITEM_REBOOT:
             __reboot(LINUX_REBOOT_MAGIC1, LINUX_REBOOT_MAGIC2, LINUX_REBOOT_CMD_RESTART2, "recovery_done");
-            return;
+            break;
         case ITEM_POWEROFF:
-            __reboot(LINUX_REBOOT_MAGIC1, LINUX_REBOOT_MAGIC2, LINUX_REBOOT_CMD_POWER_OFF, "recovery_done");
-            return;
+            __reboot(LINUX_REBOOT_MAGIC1, LINUX_REBOOT_MAGIC2, LINUX_REBOOT_CMD_POWER_OFF, NULL);
+            break;
     }
     return which;
 }
