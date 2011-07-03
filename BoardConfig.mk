@@ -58,6 +58,8 @@ TARGET_PROVIDES_INIT_TARGET_RC := true
 TARGET_RECOVERY_INITRC := device/samsung/galaxyace/recovery.rc
 BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/samsung/galaxyace/recovery/recovery_ui.c
 
+BOARD_HAS_DOWNLOAD_MODE := true
+
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true

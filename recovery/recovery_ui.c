@@ -95,14 +95,6 @@ int device_handle_key(int key_code, int visible) {
 }
 
 int device_perform_action(int which) {
-/*    switch (which) {
-        case ITEM_REBOOT:
-            reboot_wrapper("recovery_done");
-            break;
-        case ITEM_POWEROFF:
-            __reboot(LINUX_REBOOT_MAGIC1, LINUX_REBOOT_MAGIC2, LINUX_REBOOT_CMD_HALT, NULL);
-            break;
-    }*/
     return which;
 }
 
