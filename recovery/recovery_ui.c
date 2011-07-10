@@ -20,9 +20,6 @@
 #include "common.h"
 #include "extendedcommands.h"
 
-#include <sys/reboot.h>
-#include <reboot/reboot.h>
-
 char* MENU_HEADERS[] = { NULL };
 
 char* MENU_ITEMS[] = { "reboot system now",
