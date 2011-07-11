@@ -74,9 +74,6 @@ BOARD_USES_QCOM_GPS := true
 
 # USB
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
-# Following two lines only needed in Froyo for USB Mass Storage
-# TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun"
-# BOARD_UMS_LUNFILE := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 
 # FM Radio
 BOARD_HAVE_FM_RADIO := true
