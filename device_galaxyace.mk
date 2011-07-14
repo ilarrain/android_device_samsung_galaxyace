@@ -18,8 +18,7 @@ PRODUCT_COPY_FILES += \
 
 # Boot screen
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxyace/COOPER.rle:root/COOPER.rle \
-    device/samsung/galaxyace/COOPER.rle:recovery/root/COOPER.rle
+    device/samsung/galaxyace/initlogo.rle:root/initlogo.rle \
 
 # kernel modules
 PRODUCT_COPY_FILES += \
