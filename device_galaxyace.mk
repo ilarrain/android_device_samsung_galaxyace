@@ -22,11 +22,11 @@ PRODUCT_COPY_FILES += \
 
 # kernel modules
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxyace/fsr.ko:root/lib/modules/fsr.ko \
-    device/samsung/galaxyace/fsr_stl.ko:root/lib/modules/fsr_stl.ko \
-    device/samsung/galaxyace/rfs_fat.ko:root/lib/modules/rfs_fat.ko \
-    device/samsung/galaxyace/rfs_glue.ko:root/lib/modules/rfs_glue.ko \
-    device/samsung/galaxyace/sec_param.ko:root/lib/modules/sec_param.ko
+    device/samsung/galaxyace/prebuilt/modules/fsr.ko:root/lib/modules/fsr.ko \
+    device/samsung/galaxyace/prebuilt/modules/fsr_stl.ko:root/lib/modules/fsr_stl.ko \
+    device/samsung/galaxyace/prebuilt/modules/rfs_fat.ko:recovery/root/lib/modules/rfs_fat.ko \
+    device/samsung/galaxyace/prebuilt/modules/rfs_glue.ko:recovery/root/lib/modules/rfs_glue.ko \
+    device/samsung/galaxyace/prebuilt/modules/sec_param.ko:root/lib/modules/sec_param.ko
 
 $(call inherit-product, build/target/product/full.mk)
 
