@@ -1,10 +1,28 @@
-USE_CAMERA_STUB := true
+# Copyright (C) 2007 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-# Fake building with froyo cam, as old libcam is not here yet
-# BOARD_USE_FROYO_LIBCAMERA := true
+# config.mk
+#
+# Product-specific compile-time definitions.
+#
 
-# inherit from the proprietary version
--include vendor/samsung/galaxyace/BoardConfigVendor.mk
+LOCAL_PATH:= $(call my-dir)
+
+# WARNING: This line must come *before* including the proprietary
+# variant, so that it gets overwritten by the parent (which goes
+# against the traditional rules of inheritance).
+USE_CAMERA_STUB := false
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -72,6 +90,8 @@ BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := cooper
+BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
 
 # USB
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
@@ -85,3 +105,32 @@ BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
 WITH_JIT := true
 ENABLE_JSC_JIT := true
 WITH_DEXPREOPT := true
+
+# assert
+TARGET_OTA_ASSERT_DEVICE := galaxyace,cooper,GT-S5830
+
+# Wifi related defines
+BOARD_WPA_SUPPLICANT_DRIVER := AWEXT
+WIFI_DRIVER_MODULE_PATH     := /system/wifi/ar6000.ko
+WIFI_DRIVER_MODULE_NAME     := ar6000
+
+JS_ENGINE := v8
+
+# OpenGL drivers config file path
+BOARD_EGL_CFG := device/samsung/galaxyace/egl.cfg
+
+# No fallback font by default (space savings)
+#NO_FALLBACK_FONT:=true
+
+BOARD_GPS_LIBRARIES := libloc_api
+
+TARGET_PROVIDES_LIBRIL := true
+TARGET_PROVIDES_LIBAUDIO := true
+
+BOARD_USE_GR_FLIP_32 := true
+BOARD_FB_FORCE_24_BPP := true
+BOARD_FB_SINGLE_BUFFERED := true
+
+# inherit from the proprietary version
+-include vendor/samsung/galaxyace/BoardConfigVendor.mk
+

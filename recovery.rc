@@ -19,7 +19,6 @@ on init
     mkdir /data
     mkdir /cache
     mkdir /efs
-    mount /tmp /tmp tmpfs
 
 on early-fs
 

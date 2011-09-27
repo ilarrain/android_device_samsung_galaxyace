@@ -7,3 +7,4 @@
 /sdcard     vfat    /dev/block/mmcblk0p1    /dev/block/mmcblk0
 /system     ext4    /dev/block/stl12        NULL        rfs         NULL                llw,check=no
 /sd-ext     ext4    /dev/block/mmcblk0p2
+

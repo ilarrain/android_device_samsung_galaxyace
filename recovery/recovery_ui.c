@@ -20,7 +20,9 @@
 #include "common.h"
 #include "extendedcommands.h"
 
-char* MENU_HEADERS[] = { NULL };
+char* MENU_HEADERS[] = { "Use vol keys to highlight and home to select.",
+                         "",
+                         NULL };
 
 char* MENU_ITEMS[] = { "reboot system now",
                        "apply update from sdcard",
